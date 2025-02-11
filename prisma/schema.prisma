@@ -14,15 +14,25 @@ datasource db {
 }
 
 // Gera as Models (Tabelas) do banco de dados
-model Transportadora {  
-  id    String @id @default(auto()) @map("_id") @db.ObjectId 
-  transportadora String?
-  motorista String?
-  rg_motorista String?
-  ajudante String
-  rg_ajudante String
-  placa String?
-  dth_entrada String?
-  dth_saida String
-  empresa String
+model Transportadora {
+  id             String @id @default(auto()) @map("_id") @db.ObjectId
+  ajudante       String
+  dth_entrada    String
+  dth_saida      String
+  empresa        String
+  motorista      String
+  placa          String
+  rg_ajudante    String
+  rg_motorista   String
+  transportadora String
+}
+
+// Gera a Table de Usuarios
+model Users {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  acessos  String
+  email    String
+  name     String
+  password String
+  user     String
 }
