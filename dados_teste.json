@@ -1,0 +1,112 @@
+[
+    {
+      "transportadora": "Log Smart",
+      "motorista": "Kelvin",
+      "rg_motorista": "000000000",
+      "ajudante": "",
+      "rg_ajudante": "",
+      "placa": "000000000",
+      "dth_entrada": "2025-02-11T17:32",
+      "dth_saida": "",
+      "empresa": "Céu Azul"
+    },
+    {
+      "transportadora": "Trans Express",
+      "motorista": "Carlos",
+      "rg_motorista": "123456789",
+      "ajudante": "Marcos",
+      "rg_ajudante": "987654321",
+      "placa": "ABC1234",
+      "dth_entrada": "2025-02-11T08:15",
+      "dth_saida": "",
+      "empresa": "Rápido Sul"
+    },
+    {
+      "transportadora": "Carga Rápida",
+      "motorista": "Roberto",
+      "rg_motorista": "112233445",
+      "ajudante": "Fernando",
+      "rg_ajudante": "556677889",
+      "placa": "XYZ9876",
+      "dth_entrada": "2025-02-11T09:45",
+      "dth_saida": "",
+      "empresa": "Expressa Norte"
+    },
+    {
+      "transportadora": "Speed Cargo",
+      "motorista": "Anderson",
+      "rg_motorista": "223344556",
+      "ajudante": "",
+      "rg_ajudante": "",
+      "placa": "DEF5678",
+      "dth_entrada": "2025-02-11T11:00",
+      "dth_saida": "",
+      "empresa": "Fênix Log"
+    },
+    {
+      "transportadora": "Mega Transportes",
+      "motorista": "Lucas",
+      "rg_motorista": "334455667",
+      "ajudante": "Ricardo",
+      "rg_ajudante": "778899001",
+      "placa": "GHI3456",
+      "dth_entrada": "2025-02-11T12:20",
+      "dth_saida": "",
+      "empresa": "Global Shipping"
+    },
+    {
+      "transportadora": "Brasil Log",
+      "motorista": "Fernando",
+      "rg_motorista": "445566778",
+      "ajudante": "José",
+      "rg_ajudante": "889900112",
+      "placa": "JKL6789",
+      "dth_entrada": "2025-02-11T13:50",
+      "dth_saida": "",
+      "empresa": "Expresso Brasil"
+    },
+    {
+      "transportadora": "Carga Leve",
+      "motorista": "Ricardo",
+      "rg_motorista": "556677889",
+      "ajudante": "",
+      "rg_ajudante": "",
+      "placa": "MNO2345",
+      "dth_entrada": "2025-02-11T15:10",
+      "dth_saida": "",
+      "empresa": "Carga Fácil"
+    },
+    {
+      "transportadora": "Rápido Entrega",
+      "motorista": "Paulo",
+      "rg_motorista": "667788990",
+      "ajudante": "Eduardo",
+      "rg_ajudante": "991122334",
+      "placa": "PQR5678",
+      "dth_entrada": "2025-02-11T16:30",
+      "dth_saida": "",
+      "empresa": "Transnacional"
+    },
+    {
+      "transportadora": "Frota Segura",
+      "motorista": "Jorge",
+      "rg_motorista": "778899001",
+      "ajudante": "Henrique",
+      "rg_ajudante": "112233445",
+      "placa": "STU8901",
+      "dth_entrada": "2025-02-11T18:00",
+      "dth_saida": "",
+      "empresa": "Confiável Transportes"
+    },
+    {
+      "transportadora": "Translog",
+      "motorista": "Marcelo",
+      "rg_motorista": "889900112",
+      "ajudante": "",
+      "rg_ajudante": "",
+      "placa": "VWX3456",
+      "dth_entrada": "2025-02-11T19:25",
+      "dth_saida": "",
+      "empresa": "Elite Cargo"
+    }
+  ]
