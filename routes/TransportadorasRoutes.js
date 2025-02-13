@@ -17,25 +17,28 @@ transpRoute.use(cors()) //-> Configura o backend para aceitar a requisição do 
 
 transpRoute.post('/cad-transportadoras', async (request, response) =>{
 
-
-await prisma.transportadora.create(
-     {
-        data:{
-
-            transportadora: request.body.transportadora,   //-> O resquest requisita uma informação
-            motorista: request.body.motorista,
-            rg_motorista: request.body.rg_motorista,
-            ajudante: request.body.ajudante,
-            rg_ajudante: request.body.rg_ajudante,
-            placa: request.body.placa,
-            dth_entrada: request.body.dth_entrada,
-            dth_saida: request.body.dth_saida,
-            empresa: request.body.empresa
-         }
-     }
-    )//-> inseri os dados no banco de dados
-
-    response.status(201)/*-> Retorna o stados de Created  */.json(request.body)
+    try{
+        await prisma.transportadora.create(
+            {
+            data:{
+    
+                transportadora: request.body.transportadora,   //-> O resquest requisita uma informação
+                motorista: request.body.motorista,
+                rg_motorista: request.body.rg_motorista,
+                ajudante: request.body.ajudante,
+                rg_ajudante: request.body.rg_ajudante,
+                placa: request.body.placa,
+                dth_entrada: request.body.dth_entrada,
+                dth_saida: request.body.dth_saida,
+                empresa: request.body.empresa
+                }
+            }
+        )//-> inseri os dados no banco de dados
+    
+        response.status(201)/*-> Retorna o stados de Created  */.json(request.body)
+    }catch(err){
+        response.status(500).json({message: 'Erro no sercidor, tente novamente'})
+    }
 
 }) //-> Variavel para criar o cadastro de uma transportadora (Usasse o metodo POST)
 
@@ -52,10 +55,7 @@ transpRoute.put('/edit-transportadoras/:id', async (request, response) =>{
         },
             data:{
     
-            transportadora: request.body.transportadora,   //-> O resquest requisita uma informação
-            motorista: request.body.motorista,
-            dth_entrada: request.body.dth_entrada,
-            empresa: request.body.empresa
+            dth_saida: request.body.dth_saida //-> O resquest requisita uma informação
     
              }
          }
@@ -85,7 +85,14 @@ transpRoute.delete('/delete-transportadoras/:id', async (request, response) =>{ 
 
 transpRoute.get('/transportadoras', async (request, response) => {
 
-    const transportadoras = await prisma.transportadora.findMany()
+    const transportadoras = await prisma.transportadora.findMany({
+        where: {
+            dth_saida: ""  //-> retorna apenas as transportadora sem data de saida registrada
+        },
+        orderBy: {
+            dth_entrada: 'asc'  // -> Ordena pela data de entrada em ordem crescente
+         }
+    })
 
     response.status(200).json(transportadoras) // -> retorna a requisição /*-> 200 responde o status da requisição para o usuario */
 
