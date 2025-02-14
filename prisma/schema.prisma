@@ -18,6 +18,7 @@ model Transportadora {
   dth_entrada    String ?
   dth_saida      String
   empresa        String 
+  tipo           String ?
 }
 
 model Users {

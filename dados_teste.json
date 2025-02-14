@@ -8,7 +8,8 @@
       "placa": "000000000",
       "dth_entrada": "2025-02-11T17:32",
       "dth_saida": "",
-      "empresa": "Céu Azul"
+      "empresa": "Céu Azul",
+      "tipo": "Entrega"
     },
     {
       "transportadora": "Trans Express",
@@ -19,7 +20,8 @@
       "placa": "ABC1234",
       "dth_entrada": "2025-02-11T08:15",
       "dth_saida": "",
-      "empresa": "Rápido Sul"
+      "empresa": "Rápido Sul",
+      "tipo": "Coleta"
     },
     {
       "transportadora": "Carga Rápida",
@@ -30,7 +32,8 @@
       "placa": "XYZ9876",
       "dth_entrada": "2025-02-11T09:45",
       "dth_saida": "",
-      "empresa": "Expressa Norte"
+      "empresa": "Expressa Norte",
+      "tipo": "Coleta"
     },
     {
       "transportadora": "Speed Cargo",
@@ -41,7 +44,8 @@
       "placa": "DEF5678",
       "dth_entrada": "2025-02-11T11:00",
       "dth_saida": "",
-      "empresa": "Fênix Log"
+      "empresa": "Fênix Log",
+      "tipo": "Coleta"
     },
     {
       "transportadora": "Mega Transportes",
@@ -52,7 +56,8 @@
       "placa": "GHI3456",
       "dth_entrada": "2025-02-11T12:20",
       "dth_saida": "",
-      "empresa": "Global Shipping"
+      "empresa": "Global Shipping",
+      "tipo": "Entrega"
     },
     {
       "transportadora": "Brasil Log",
@@ -63,7 +68,8 @@
       "placa": "JKL6789",
       "dth_entrada": "2025-02-11T13:50",
       "dth_saida": "",
-      "empresa": "Expresso Brasil"
+      "empresa": "Expresso Brasil",
+      "tipo": "Coleta"
     },
     {
       "transportadora": "Carga Leve",
@@ -74,7 +80,8 @@
       "placa": "MNO2345",
       "dth_entrada": "2025-02-11T15:10",
       "dth_saida": "",
-      "empresa": "Carga Fácil"
+      "empresa": "Carga Fácil",
+      "tipo": "Entrega"
     },
     {
       "transportadora": "Rápido Entrega",
@@ -85,7 +92,8 @@
       "placa": "PQR5678",
       "dth_entrada": "2025-02-11T16:30",
       "dth_saida": "",
-      "empresa": "Transnacional"
+      "empresa": "Transnacional",
+      "tipo": "Coleta"
     },
     {
       "transportadora": "Frota Segura",
@@ -96,7 +104,8 @@
       "placa": "STU8901",
       "dth_entrada": "2025-02-11T18:00",
       "dth_saida": "",
-      "empresa": "Confiável Transportes"
+      "empresa": "Confiável Transportes",
+      "tipo": "Coleta"
     },
     {
       "transportadora": "Translog",
@@ -107,6 +116,7 @@
       "placa": "VWX3456",
       "dth_entrada": "2025-02-11T19:25",
       "dth_saida": "",
-      "empresa": "Elite Cargo"
+      "empresa": "Elite Cargo",
+      "tipo": "Coleta"
     }
   ]

@@ -30,7 +30,8 @@ transpRoute.post('/cad-transportadoras', async (request, response) =>{
                 placa: request.body.placa,
                 dth_entrada: request.body.dth_entrada,
                 dth_saida: request.body.dth_saida,
-                empresa: request.body.empresa
+                empresa: request.body.empresa,
+                tipo: request.body.tipo
                 }
             }
         )//-> inseri os dados no banco de dados
@@ -101,3 +102,6 @@ transpRoute.get('/transportadoras', async (request, response) => {
 /*-------------------------------------- X ------------------------------------------- */
 
 export default transpRoute
+
+
+/*langflow*/
