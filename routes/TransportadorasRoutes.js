@@ -141,6 +141,31 @@ transpRoute.get('/novatransportadora', async (request, response) => {
 });
 /*-------------------------------------- X ------------------------------------------- */
 
+/*----------------------- Função para Relatório de Transportadoras --------------------------- */
+
+transpRoute.get('/reportstransportadora', async (request, response) => {
+
+    try{
+        const transportadoraReport = await prisma.transportadora.findMany({
+            where: {
+                dth_saida: {
+                    not: "" // -> Retorna transportadoras COM data de saída registrada
+                }
+            },
+            orderBy: {
+                dth_entrada: 'asc'  // -> Ordena pela data de entrada em ordem crescente
+             }
+        })
+    
+        response.status(200).json(transportadoraReport) // -> retorna a requisição /*-> 200 responde o status da requisição para o usuario */
+    }catch(err){
+        response.status(500).json({ message: 'Erro ao buscar transportadora.' });
+    }
+
+})  //GET -> metodo usado para exibir/listar 
+
+/*-------------------------------------- X ------------------------------------------- */
+
 export default transpRoute
 
 
