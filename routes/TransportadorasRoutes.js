@@ -18,7 +18,7 @@ transpRoute.use(cors()) //-> Configura o backend para aceitar a requisição do 
 transpRoute.post('/cad-transportadoras', async (request, response) =>{
 
     try{
-        await prisma.transportadora.create(
+      const NovaTrasnportadora =  await prisma.transportadora.create(
             {
             data:{
     
@@ -35,6 +35,12 @@ transpRoute.post('/cad-transportadoras', async (request, response) =>{
                 }
             }
         )//-> inseri os dados no banco de dados
+
+        if (!NovaTrasnportadora) {
+            console.log("Nenhuma nova transportadora foi cadastrada.");
+        } else {
+            console.log(`Nova transportadora: ${NovaTrasnportadora.transportadora}`);
+        }
     
         response.status(201)/*-> Retorna o stados de Created  */.json(request.body)
     }catch(err){
@@ -99,6 +105,40 @@ transpRoute.get('/transportadoras', async (request, response) => {
 
 })  //GET -> metodo usado para exibir/listar 
 
+/*-------------------------------------- X ------------------------------------------- */
+
+
+/*-------------------------------------- Alerta de Nova Transportadora ----------------------*/
+transpRoute.get('/novatransportadora', async (request, response) => {
+    const date = new Date();
+    date.setSeconds(0, 0);  // Ignora os segundos e milissegundos da data atual
+    const dateFormatted = date.toISOString().split('Z')[0];  // Formata a data sem 'Z'
+
+    try {
+        const transportadora = await prisma.transportadora.findFirst({
+            orderBy: {
+                dth_entrada: 'desc'
+            }
+        });
+
+        // Remove os segundos e milissegundos da data da API
+        if (transportadora && transportadora.dth_entrada) {
+            const transportadoraDate = new Date(transportadora.dth_entrada);
+            transportadoraDate.setSeconds(0, 0);  // Ignora os segundos e milissegundos da data da API
+
+            // Compara as datas sem considerar os segundos
+            if (transportadoraDate.toISOString().split('Z')[0] === dateFormatted) {
+                response.status(200).json({ message: `Nova transportadora no Pátio: ${transportadora.transportadora}` });
+            } else {
+                response.status(404).json({ message: 'Nenhuma transportadora encontrada.' });
+            }
+        } else {
+            response.status(404).json({ message: 'Nenhuma transportadora encontrada.' });
+        }
+    } catch (error) {
+        response.status(500).json({ message: 'Erro ao buscar transportadora.' });
+    }
+});
 /*-------------------------------------- X ------------------------------------------- */
 
 export default transpRoute
