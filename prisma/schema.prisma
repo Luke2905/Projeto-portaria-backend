@@ -19,6 +19,7 @@ model Transportadora {
   dth_saida      String
   empresa        String 
   tipo           String ?
+  observacao     String
 }
 
 model Users {

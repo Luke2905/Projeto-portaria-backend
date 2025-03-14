@@ -31,7 +31,8 @@ transpRoute.post('/cad-transportadoras', async (request, response) =>{
                 dth_entrada: request.body.dth_entrada,
                 dth_saida: request.body.dth_saida,
                 empresa: request.body.empresa,
-                tipo: request.body.tipo
+                tipo: request.body.tipo,
+                observacao: request.body.observacao
                 }
             }
         )//-> inseri os dados no banco de dados
@@ -62,7 +63,8 @@ transpRoute.put('/edit-transportadoras/:id', async (request, response) =>{
         },
             data:{
     
-            dth_saida: request.body.dth_saida //-> O resquest requisita uma informação
+            dth_saida: request.body.dth_saida, //-> O resquest requisita uma informação
+            observacao: request.body.observacao
     
              }
          }
