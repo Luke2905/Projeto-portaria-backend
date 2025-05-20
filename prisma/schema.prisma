@@ -22,6 +22,22 @@ model Transportadora {
   observacao     String
 }
 
+model Colaborador {
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
+  nome         String?
+  cracha       String
+  departamento String?
+  horarios     Horarios[] // ← relacionamento 1:N com Horarios
+}
+
+model Horarios {
+  id             String       @id @default(auto()) @map("_id") @db.ObjectId
+  colaboradorId  String       @db.ObjectId
+  colaborador    Colaborador  @relation(fields: [colaboradorId], references: [id])
+  entrada        String?
+  saida          String
+}
+
 model Users {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
   acessos  String
