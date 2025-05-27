@@ -27,6 +27,7 @@ model Colaborador {
   nome         String?
   cracha       String
   departamento String?
+  situacao     String?
   horarios     Horarios[] // ← relacionamento 1:N com Horarios
 }
 
